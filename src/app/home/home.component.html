@@ -1,0 +1,38 @@
+<div class="row">
+  <div class="col-sm-3 col-md-3 col-lg-2">
+    <app-adbanner [ads]="ads[0]"></app-adbanner>
+    <app-adbanner [ads]="ads[1]"></app-adbanner>
+    <app-adbanner [ads]="ads[2]"></app-adbanner>
+  </div>
+  <div class="col-sm-6 col-md-6 col-lg-8">
+    <ngb-carousel *ngIf="weatherData">
+      <ng-template *ngFor="let wdata of weatherData" ngbSlide>
+        <img [src]="wdata.image" alt="Random first slide">
+      </ng-template>
+    </ngb-carousel>
+    <br>
+    <div class="row">
+
+      <div class="col-lg-4 col-md-6 mb-4" *ngFor="let wdata of itemData">
+        <div class="card h-100">
+          <a><img class="card-img-top" style="height:200px" [src]="wdata.image" alt=""></a>
+          <div class="card-body">
+            <h4 class="card-title">
+              <div class="text-success">{{wdata.label}}</div>
+            </h4>
+            <h5>{{wdata.price}}</h5>
+            <p class="card-text">{{wdata.description}}</p>
+          </div>
+          <div class="card-footer">
+            <small class="text-muted">&#9733; &#9733; &#9733; &#9733; &#9734;</small>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-3 col-md-3 col-lg-2">
+    <app-adbanner [ads]="ads[3]"></app-adbanner>
+    <app-adbanner [ads]="ads[4]"></app-adbanner>
+    <app-adbanner [ads]="ads[5]"></app-adbanner>
+  </div>
+</div>
